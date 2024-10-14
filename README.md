@@ -33,7 +33,21 @@ npm run new-component [TheNewComponentName]
 
 If you run into any weird errors when trying to run a development server, start by deleting the `.parcel-cache` directory. This directory holds temporary automatically-generated files, and sometimes things get out of sync, and they need to be deleted.
 
-If you're still experiencing issues after deleting `.parcel-cache`, you can share the error message and any additional details in Discord.
+### Cannot Destructure ToastPlayground
+
+Several students have reported getting an error like this, when saving files:
+
+> TypeError: Cannot destructure property 'handleToastAddition' of '(0 , \_reactDefault.default).useContext(...)' as it is undefined
+
+Frustratingly, I haven't been able to reproduce this error, so I don't really know what's causing it, but **it isn't really anything you have to worry about.** It only happens in development, when saving files. This error won't stop you from sharing your projects with the world, it's just a bit annoying while developing.
+
+This issue also appears to be specific to Parcel, the bundler we're using in this project. I chose Parcel because it is the most lightweight option I know, to quickly get a React project working, but in the real world, I recommend using Next.js. We explore Next later in this course.
+
+### Other issues
+
+If you're running into other issues, please let us know in Discord. Please include the error message, your environment (browser/OS), and any changes you've made to the code.
+
+Also, please try deleting the `.parcel-cache` directory first, to rule out any cache issues.
 
 ---
 
@@ -285,4 +299,5 @@ useEscapeKey(() => {
 - Because this is a generic hook, it shouldn't be stored with the `ToastProvider` component. Create a new `/src/hooks` directory, and place your new hook in there.
 - The `ToastProvider` component should use this new hook.
 - **Make sure there are no ESLint warnings.**
-  - In VSCode, ESLint warnings are shown as squiggly yellow underlines. You can view the warning by hovering over the underlined characters, or by opening the “Problems” tab (`⌘` + `Shift` + `M`, or Ctrl + `Shift` + `M`).
+  - The easiest way to see ESLint warnings is through the [ESLint VS Code extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint). With this extension installed, ESLint warnings are shown as squiggly yellow underlines. You can view the warning by hovering over the underlined characters, or by opening the “Problems” tab (`⌘` + `Shift` + `M`, or Ctrl + `Shift` + `M`).
+  - If you use another editor, you can search for the ESLint extension. Fortunately, ESLint is very popular, and extensions should exist for all common editors.
